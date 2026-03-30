@@ -1,4 +1,91 @@
 body {
-    background: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #0a0a0a;
     color: white;
+}
+
+nav a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    color: white;
+    background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') no-repeat center/cover;
+}
+
+.hero h2 {
+    font-size: 40px;
+}
+
+button {
+    padding: 12px 25px;
+    background: #ff9800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+}
+
+.testimonials {
+    background: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 20px auto;
+    max-width: 400px;
+    font-style: italic;
+}
+
+.cta {
+    background: #ff9800;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.contact {
+    text-align: center;
+    padding: 50px;
+}
+
+input, textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
 }
