@@ -1,15 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeClean Services</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>My Website</h1>
-    <p>This is my content</p>
+<header>
+    <h1>PrimeClean</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <script src="script.js"></script>
+<section class="hero">
+    <h2>Professional Cleaning Services You Can Trust</h2>
+    <p>We make homes and offices spotless and stress-free.</p>
+    <button onclick="scrollToContact()">Book Now</button>
+</section>
 
+<section id="services" class="services">
+    <div class="card">
+        <h3>Home Cleaning</h3>
+        <p>Deep cleaning for apartments and houses.</p>
+    </div>
+
+    <div class="card">
+        <h3>Office Cleaning</h3>
+        <p>Keep your workplace clean and productive.</p>
+    </div>
+
+    <div class="card">
+        <h3>Move-in / Move-out</h3>
+        <p>Perfect cleaning when relocating.</p>
+    </div>
+</section>
+
+    <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+
+    <div class="testimonial">
+        <p>"Amazing service! My house has never been this clean."</p>
+        <h4>- Sarah M.</h4>
+    </div>
+
+    <div class="testimonial">
+        <p>"Very professional and on time. Highly recommend!"</p>
+        <h4>- James K.</h4>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready for a Spotless Space?</h2>
+    <button onclick="scrollToContact()">Book Your Cleaning Today</button>
+</section>
+    
+<section class="about">
+    <h2>Why Choose Us?</h2>
+    <p>✔ Trusted professionals</p>
+    <p>✔ Affordable pricing</p>
+    <p>✔ 100% satisfaction guarantee</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Book a Service</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Describe your cleaning needs"></textarea>
+    <button onclick="sendMessage()">Submit</button>
+</section>
+
+<footer>
+    <p>© 2026 PrimeClean Services</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
