@@ -3,227 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro SaaS Business App</title>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<title>Creative Landing Page</title>
 
 <style>
-* {
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, sans-serif;
-}
-
 body {
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background: linear-gradient(-45deg, #0f172a, #1e3a8a, #0f766e, #1e293b);
-background-size: 400% 400%;
-animation: bg 10s ease infinite;
+margin:0;
+font-family: Arial, sans-serif;
 color:white;
+overflow-x:hidden;
 }
 
-@keyframes bg {
-0% {background-position:0% 50%;}
-50% {background-position:100% 50%;}
-100% {background-position:0% 50%;}
+/* BACKGROUND */
+.bg {
+position:fixed;
+width:100%;
+height:100%;
+background: url('https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+filter: blur(3px) brightness(0.5);
+transform: scale(1.1);
 }
 
-/* GLASS BOX */
-.box {
-width: 90%;
-max-width: 420px;
-padding: 25px;
-background: rgba(255,255,255,0.08);
-backdrop-filter: blur(15px);
-border-radius: 20px;
-box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+/* OVERLAY */
+.overlay {
+position:fixed;
+width:100%;
+height:100%;
+background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,50,0.7));
+}
+
+/* MAIN */
+.container {
+position:relative;
+z-index:2;
 text-align:center;
+padding:100px 20px;
+animation: fadeIn 2s ease;
 }
 
-input, textarea {
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-outline:none;
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(20px);}
+to {opacity:1; transform:translateY(0);}
 }
 
-button {
-width:100%;
-padding:12px;
-margin-top:10px;
-border:none;
-border-radius:12px;
-background:#00f2ff;
-color:black;
+h1 {
+font-size:45px;
+background: linear-gradient(90deg, #00f2ff, #ff00d4, #00ff88);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+from {filter: drop-shadow(0 0 5px #00f2ff);}
+to {filter: drop-shadow(0 0 20px #ff00d4);}
+}
+
+p {
+font-size:18px;
+opacity:0.9;
+max-width:600px;
+margin:auto;
+}
+
+.btn {
+display:inline-block;
+margin-top:25px;
+padding:14px 25px;
+background:#25D366;
+color:white;
+border-radius:30px;
+text-decoration:none;
 font-weight:bold;
-cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 transition:0.3s;
 }
 
-button:hover {
-transform: scale(1.03);
+.btn:hover {
+transform:scale(1.05);
 }
 
-nav {
-position:fixed;
-top:0;
-width:100%;
-padding:15px;
-background: rgba(0,0,0,0.3);
-backdrop-filter: blur(10px);
-text-align:center;
-font-weight:bold;
+/* FLOATING SHAPES */
+.circle {
+position:absolute;
+width:80px;
+height:80px;
+background:rgba(0,255,255,0.3);
+border-radius:50%;
+animation: float 6s infinite ease-in-out;
 }
 
-/* DASHBOARD */
-.dashboard {
-display:none;
-width:100%;
-padding:80px 20px;
-text-align:center;
-}
+.circle:nth-child(1){top:10%;left:10%;}
+.circle:nth-child(2){top:70%;left:80%;}
+.circle:nth-child(3){top:40%;left:50%;}
 
-.card {
-background: rgba(255,255,255,0.08);
-backdrop-filter: blur(10px);
-padding:20px;
-margin:15px auto;
-border-radius:15px;
-max-width:500px;
+@keyframes float {
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
 }
-
-.hidden {display:none;}
 </style>
 </head>
 
 <body>
 
-<nav>🚀 Pro SaaS Business App</nav>
+<div class="bg"></div>
+<div class="overlay"></div>
 
-<!-- LOGIN -->
-<div id="authBox" class="box">
-<h2>Login / Signup</h2>
+<!-- FLOATING EFFECT -->
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
 
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
+<div class="container">
 
-<button onclick="signup()">Sign Up</button>
-<button onclick="login()">Login</button>
-</div>
+<h1>Creative Design Studio</h1>
 
-<!-- DASHBOARD -->
-<div id="dashboard" class="dashboard">
+<p>
+We design modern websites, landing pages, and digital products that look like premium Photoshop UI designs — clean, bright, and high converting.
+</p>
 
-<div class="card">
-<h2>Welcome to SaaS Dashboard</h2>
-<p>Create and manage client orders</p>
-<button onclick="logout()">Logout</button>
-</div>
-
-<div class="card">
-<h3>Create Order</h3>
-<input id="name" placeholder="Client Name">
-<input id="business" placeholder="Business Name">
-<textarea id="details" placeholder="Project Details"></textarea>
-<button onclick="saveOrder()">Save Order</button>
-</div>
-
-<div class="card">
-<h3>Orders</h3>
-<div id="orders"></div>
-</div>
+<!-- WHATSAPP BUTTON -->
+<a class="btn" href="https://wa.me/2349075310374?text=Hello%20I%20want%20a%20professional%20landing%20page%20for%20my%20business" target="_blank">
+💬 Message Us on WhatsApp
+</a>
 
 </div>
-
-<script>
-
-// 🔴 FIREBASE CONFIG (PUT YOUR OWN)
-const firebaseConfig = {
-  apiKey: "AIzaSyDLvK-Q4v1hZ2B-mtxZzNXs5m1tCS6LdGw",
-  authDomain: "neobank-app-3ebbe.firebaseapp.com",
-  projectId: "neobank-app-3ebbe",
-  storageBucket: "neobank-app-3ebbe.firebasestorage.app",
-  messagingSenderId: "258331631270",
-  appId: "1:258331631270:web:f4eeeb8ac1e3177bb21e67",
-  measurementId: "G-9VRK9ZZXYS"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// SIGNUP
-function signup(){
-auth.createUserWithEmailAndPassword(email.value, password.value)
-.then(()=>alert("Account created"));
-}
-
-// LOGIN
-function login(){
-auth.signInWithEmailAndPassword(email.value, password.value)
-.then(()=>{
-document.getElementById("authBox").style.display="none";
-document.getElementById("dashboard").style.display="block";
-loadOrders();
-});
-}
-
-// LOGOUT
-function logout(){
-auth.signOut();
-location.reload();
-}
-
-// SAVE ORDER
-function saveOrder(){
-db.collection("orders").add({
-name:name.value,
-business:business.value,
-details:details.value,
-time:Date.now()
-});
-alert("Order saved!");
-loadOrders();
-}
-
-// LOAD ORDERS
-function loadOrders(){
-let output=document.getElementById("orders");
-output.innerHTML="";
-
-db.collection("orders").orderBy("time","desc").get()
-.then(snap=>{
-snap.forEach(doc=>{
-let d=doc.data();
-output.innerHTML+=`
-<div style="margin:10px;padding:10px;background:rgba(255,255,255,0.1);border-radius:10px;">
-<b>${d.name}</b><br>
-${d.business}<br>
-${d.details}
-</div>
-`;
-});
-});
-}
-
-// AUTH STATE
-auth.onAuthStateChanged(user=>{
-if(user){
-document.getElementById("authBox").style.display="none";
-document.getElementById("dashboard").style.display="block";
-loadOrders();
-}
-});
-
-</script>
 
 </body>
 </html>
