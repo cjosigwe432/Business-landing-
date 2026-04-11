@@ -1,84 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrimeClean Services</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Landing Page</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #0f172a;
+color: white;
+}
+
+/* HERO */
+.hero {
+padding: 100px 20px;
+text-align: center;
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.hero h1 {
+font-size: 40px;
+margin-bottom: 10px;
+}
+
+.hero p {
+font-size: 18px;
+opacity: 0.8;
+}
+
+.btn {
+display: inline-block;
+margin-top: 20px;
+padding: 12px 22px;
+border-radius: 25px;
+background: #00f2ff;
+color: black;
+text-decoration: none;
+font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+padding: 60px 20px;
+text-align: center;
+}
+
+.card {
+background: #1e293b;
+padding: 20px;
+margin: 15px auto;
+border-radius: 15px;
+max-width: 600px;
+}
+
+/* GRID */
+.grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 15px;
+}
+
+.grid .card {
+width: 250px;
+}
+
+/* FAQ */
+.faq {
+text-align: left;
+max-width: 600px;
+margin: auto;
+}
+
+/* FOOTER */
+footer {
+background: #020617;
+padding: 20px;
+text-align: center;
+font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-    
-<header>
-    <h1>PrimeClean</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
 
-<section class="hero">
-    <h2>Professional Cleaning Services You Can Trust</h2>
-    <p>We make homes and offices spotless and stress-free.</p>
-    <button onclick="scrollToContact()">Book Now</button>
+<!-- HERO -->
+<div class="hero">
+<h1>We Build High-Converting Landing Pages</h1>
+<p>Turn visitors into paying customers with modern design</p>
+
+<a class="btn" href="https://wa.me/2340000000000" target="_blank">
+Get Your Website Now
+</a>
+</div>
+
+<!-- SERVICES -->
+<section>
+<h2>What You Get</h2>
+<div class="grid">
+<div class="card">Fast Loading Website</div>
+<div class="card">Mobile Friendly Design</div>
+<div class="card">Modern UI/UX</div>
+</div>
 </section>
 
-<section id="services" class="services">
-    <div class="card">
-        <h3>Home Cleaning</h3>
-        <p>Deep cleaning for apartments and houses.</p>
-    </div>
-
-    <div class="card">
-        <h3>Office Cleaning</h3>
-        <p>Keep your workplace clean and productive.</p>
-    </div>
-
-    <div class="card">
-        <h3>Move-in / Move-out</h3>
-        <p>Perfect cleaning when relocating.</p>
-    </div>
+<!-- BENEFITS -->
+<section>
+<h2>Why Choose Us</h2>
+<div class="card">
+We design landing pages that are optimized to convert visitors into real customers using strong visuals and call-to-action buttons.
+</div>
 </section>
 
-    <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-
-    <div class="testimonial">
-        <p>"Amazing service! My house has never been this clean."</p>
-        <h4>- Sarah M.</h4>
-    </div>
-
-    <div class="testimonial">
-        <p>"Very professional and on time. Highly recommend!"</p>
-        <h4>- James K.</h4>
-    </div>
+<!-- TESTIMONIALS -->
+<section>
+<h2>Client Reviews</h2>
+<div class="card">
+“Very fast delivery and professional design. My sales increased!” – Client A
+</div>
+<div class="card">
+“Clean and modern website. Highly recommended.” – Client B
+</div>
 </section>
 
-<section class="cta">
-    <h2>Ready for a Spotless Space?</h2>
-    <button onclick="scrollToContact()">Book Your Cleaning Today</button>
-</section>
-    
-<section class="about">
-    <h2>Why Choose Us?</h2>
-    <p>✔ Trusted professionals</p>
-    <p>✔ Affordable pricing</p>
-    <p>✔ 100% satisfaction guarantee</p>
+<!-- FAQ -->
+<section>
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<p><b>How fast is delivery?</b><br>Usually 1–3 days depending on project.</p>
+<p><b>Can I request changes?</b><br>Yes, we include revisions.</p>
+<p><b>Do you support mobile?</b><br>Yes, fully responsive design.</p>
+</div>
 </section>
 
-<section id="contact" class="contact">
-    <h2>Book a Service</h2>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Describe your cleaning needs"></textarea>
-    <button onclick="sendMessage()">Submit</button>
+<!-- CTA -->
+<section>
+<h2>Ready to grow your business?</h2>
+<a class="btn" href="https://wa.me/234907531037" target="_blank">
+Contact on WhatsApp
+</a>
 </section>
 
 <footer>
-    <p>© 2026 PrimeClean Services</p>
+© 2026 Pro Landing Pages | Built for High Conversion
 </footer>
 
-<script src="script.js"></script>
-    
 </body>
 </html>
