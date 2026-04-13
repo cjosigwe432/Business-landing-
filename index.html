@@ -3,132 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creative Landing Page</title>
+<title>Business Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-margin:0;
-font-family: Arial, sans-serif;
-color:white;
-overflow-x:hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
 
-/* BACKGROUND */
-.bg {
-position:fixed;
-width:100%;
-height:100%;
-background: url('https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1400&q=80');
-background-size:cover;
-background-position:center;
-filter: blur(3px) brightness(0.5);
-transform: scale(1.1);
+body{
+  background:#0f172a;
+  color:#fff;
 }
 
-/* OVERLAY */
-.overlay {
-position:fixed;
-width:100%;
-height:100%;
-background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,50,0.7));
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  position:fixed;
+  width:100%;
 }
 
-/* MAIN */
-.container {
-position:relative;
-z-index:2;
-text-align:center;
-padding:100px 20px;
-animation: fadeIn 2s ease;
+nav h1{
+  color:#38bdf8;
 }
 
-@keyframes fadeIn {
-from {opacity:0; transform:translateY(20px);}
-to {opacity:1; transform:translateY(0);}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
 }
 
-h1 {
-font-size:45px;
-background: linear-gradient(90deg, #00f2ff, #ff00d4, #00ff88);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation: glow 3s infinite alternate;
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+  background-size:cover;
 }
 
-@keyframes glow {
-from {filter: drop-shadow(0 0 5px #00f2ff);}
-to {filter: drop-shadow(0 0 20px #ff00d4);}
+.hero h2{
+  font-size:45px;
 }
 
-p {
-font-size:18px;
-opacity:0.9;
-max-width:600px;
-margin:auto;
+.hero p{
+  margin:20px 0;
+  font-size:18px;
 }
 
-.btn {
-display:inline-block;
-margin-top:25px;
-padding:14px 25px;
-background:#25D366;
-color:white;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-transition:0.3s;
+.btn{
+  padding:12px 25px;
+  background:#38bdf8;
+  border:none;
+  color:#000;
+  cursor:pointer;
+  border-radius:5px;
 }
 
-.btn:hover {
-transform:scale(1.05);
+/* SECTIONS */
+section{
+  padding:80px 50px;
+  text-align:center;
 }
 
-/* FLOATING SHAPES */
-.circle {
-position:absolute;
-width:80px;
-height:80px;
-background:rgba(0,255,255,0.3);
-border-radius:50%;
-animation: float 6s infinite ease-in-out;
+.services{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-.circle:nth-child(1){top:10%;left:10%;}
-.circle:nth-child(2){top:70%;left:80%;}
-.circle:nth-child(3){top:40%;left:50%;}
+.card{
+  background:#1e293b;
+  padding:20px;
+  width:250px;
+  border-radius:10px;
+  transition:0.3s;
+}
 
-@keyframes float {
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* CONTACT */
+.contact{
+  background:#020617;
+}
+
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="bg"></div>
-<div class="overlay"></div>
+<nav>
+  <h1>MyBusiness</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<!-- FLOATING EFFECT -->
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-
-<div class="container">
-
-<h1>Creative Design Studio</h1>
-
-<p>
-We design modern websites, landing pages, and digital products that look like premium Photoshop UI designs — clean, bright, and high converting.
-</p>
-
-<!-- WHATSAPP BUTTON -->
-<a class="btn" href="https://wa.me/2349075310374?text=Hello%20I%20want%20a%20professional%20landing%20page%20for%20my%20business" target="_blank">
-💬 Message Us on WhatsApp
-</a>
-
+<div class="hero">
+  <div>
+    <h2>We Help Your Business Grow Online</h2>
+    <p>Professional websites that bring you customers</p>
+    <button class="btn" onclick="scrollToContact()">Get Started</button>
+  </div>
 </div>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card fade">
+      <h3>Website Design</h3>
+      <p>Modern and responsive websites</p>
+    </div>
+    <div class="card fade">
+      <h3>Branding</h3>
+      <p>Build your online identity</p>
+    </div>
+    <div class="card fade">
+      <h3>Marketing</h3>
+      <p>Get more customers online</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Why Choose Us</h2>
+  <p class="fade">We create high-quality websites that help businesses grow fast.</p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Let’s build your business website today</p>
+  <br>
+  <button class="btn" onclick="whatsapp()">Chat on WhatsApp</button>
+</section>
+
+<a class="whatsapp" href="#" onclick="whatsapp()">💬</a>
+
+<script>
+function whatsapp(){
+  let number = "2349168144059"; // PUT YOUR NUMBER
+  let message = "Hello, I want a website for my business";
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`);
+}
+
+function scrollToContact(){
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', ()=>{
+  fades.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
