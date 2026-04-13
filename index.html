@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Website</title>
+<title>Premium Business Website</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -16,17 +16,20 @@
 }
 
 body{
-  background:#0f172a;
-  color:#fff;
+  background:#020617;
+  color:white;
 }
 
-/* NAV */
+/* NAVBAR */
 nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
   position:fixed;
   width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.5);
+  z-index:1000;
 }
 
 nav h1{
@@ -34,71 +37,96 @@ nav h1{
 }
 
 nav a{
-  color:white;
-  text-decoration:none;
   margin-left:20px;
+  text-decoration:none;
+  color:white;
 }
 
 /* HERO */
 .hero{
   height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
-  url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
   background-size:cover;
 }
 
 .hero h2{
-  font-size:45px;
+  font-size:50px;
 }
 
 .hero p{
   margin:20px 0;
-  font-size:18px;
 }
 
 .btn{
   padding:12px 25px;
-  background:#38bdf8;
   border:none;
-  color:#000;
+  background:#38bdf8;
+  color:black;
   cursor:pointer;
   border-radius:5px;
 }
 
 /* SECTIONS */
 section{
-  padding:80px 50px;
+  padding:80px 40px;
   text-align:center;
 }
 
+/* SERVICES */
 .services{
   display:flex;
-  justify-content:center;
   gap:20px;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .card{
-  background:#1e293b;
+  background:#0f172a;
   padding:20px;
-  width:250px;
+  width:260px;
   border-radius:10px;
-  transition:0.3s;
+  transition:0.4s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-10px) scale(1.03);
+}
+
+/* TESTIMONIAL */
+.testimonial{
+  background:#0f172a;
+  margin:20px;
+  padding:20px;
+  border-radius:10px;
 }
 
 /* CONTACT */
-.contact{
-  background:#020617;
+form{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
 }
 
+input, textarea{
+  margin:10px 0;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+}
+
+footer{
+  background:black;
+  padding:20px;
+  text-align:center;
+}
+
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -106,27 +134,27 @@ section{
   background:#25D366;
   padding:15px;
   border-radius:50%;
-  font-size:20px;
 }
 
 /* ANIMATION */
 .fade{
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(40px);
   transition:1s;
 }
 
-.fade.show{
+.show{
   opacity:1;
   transform:translateY(0);
 }
 </style>
 
 </head>
+
 <body>
 
 <nav>
-  <h1>MyBusiness</h1>
+  <h1>DevAgency</h1>
   <div>
     <a href="#">Home</a>
     <a href="#services">Services</a>
@@ -136,9 +164,9 @@ section{
 
 <div class="hero">
   <div>
-    <h2>We Help Your Business Grow Online</h2>
-    <p>Professional websites that bring you customers</p>
-    <button class="btn" onclick="scrollToContact()">Get Started</button>
+    <h2>We Build Websites That Bring Customers</h2>
+    <p>Upgrade your business with a powerful online presence</p>
+    <button class="btn" onclick="scrollContact()">Start Now</button>
   </div>
 </div>
 
@@ -147,49 +175,65 @@ section{
   <div class="services">
     <div class="card fade">
       <h3>Website Design</h3>
-      <p>Modern and responsive websites</p>
+      <p>Clean and modern websites</p>
     </div>
     <div class="card fade">
-      <h3>Branding</h3>
-      <p>Build your online identity</p>
+      <h3>SEO Optimization</h3>
+      <p>Rank higher on Google</p>
     </div>
     <div class="card fade">
-      <h3>Marketing</h3>
-      <p>Get more customers online</p>
+      <h3>Brand Identity</h3>
+      <p>Make your business stand out</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Why Choose Us</h2>
-  <p class="fade">We create high-quality websites that help businesses grow fast.</p>
+  <h2>What Clients Say</h2>
+  <div class="testimonial fade">“Amazing website, got more customers instantly!”</div>
+  <div class="testimonial fade">“Professional and fast delivery.”</div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
   <h2>Contact Us</h2>
-  <p>Let’s build your business website today</p>
-  <br>
-  <button class="btn" onclick="whatsapp()">Chat on WhatsApp</button>
+
+  <!-- FORM SUBMIT (REAL EMAIL RECEIVER) -->
+  <form action="https://formsubmit.co/YOUR-EMAIL@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <!-- disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button class="btn">Send Message</button>
+  </form>
+
 </section>
 
-<a class="whatsapp" href="#" onclick="whatsapp()">💬</a>
+<footer>
+  <p>© 2026 DevAgency. All rights reserved.</p>
+</footer>
+
+<a class="whatsapp" onclick="whatsapp()">💬</a>
 
 <script>
-function whatsapp(){
-  let number = "2349168144059"; // PUT YOUR NUMBER
-  let message = "Hello, I want a website for my business";
-  window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`);
-}
-
-function scrollToContact(){
+function scrollContact(){
   document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
 
+function whatsapp(){
+  let number = "2349168144059";
+  let msg = "Hello, I want a website";
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(msg)}`);
+}
+
+/* SCROLL ANIMATION */
 const fades = document.querySelectorAll('.fade');
 
 window.addEventListener('scroll', ()=>{
   fades.forEach(el=>{
-    const top = el.getBoundingClientRect().top;
+    let top = el.getBoundingClientRect().top;
     if(top < window.innerHeight - 100){
       el.classList.add('show');
     }
