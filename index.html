@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechHub Store</title>
+  <title>TechStore</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>TechHub</h1>
+<header class="header">
+  <h1 class="logo">TechStore</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Products</a>
+    <a href="#">Shop</a>
     <a href="#">Contact</a>
-    <button onclick="openCart()">🛒 <span id="cart-count">0</span></button>
+    <button class="cart-btn" onclick="openCart()">
+      🛒 <span id="cart-count">0</span>
+    </button>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Latest Phones, Laptops & Accessories</h2>
-  <p>Shop high-quality tech products at great prices</p>
+  <div>
+    <h2>Modern Tech Store</h2>
+    <p>Shop iPhones, Laptops & Accessories</p>
+  </div>
 </section>
 
 <section class="products" id="product-list"></section>
@@ -30,7 +34,7 @@
   <h2>Your Cart</h2>
   <div id="cart-items"></div>
   <h3>Total: $<span id="total">0</span></h3>
-  <button class="checkout" onclick="checkout()">Order via WhatsApp</button>
+  <button class="checkout" onclick="checkout()">Checkout</button>
   <button class="close" onclick="closeCart()">Close</button>
 </div>
 
