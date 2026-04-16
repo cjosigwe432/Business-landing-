@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechStore</title>
+  <title>Apple Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <h1 class="logo">TechStore</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Contact</a>
-    <button class="cart-btn" onclick="openCart()">
-      🛒 <span id="cart-count">0</span>
-    </button>
-  </nav>
-</header>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>🍎 Apple Store</h2>
+  <a href="#">Store</a>
+  <a href="#">iPhone</a>
+  <a href="#">Mac</a>
+  <a href="#">iPad</a>
+  <a href="#">Accessories</a>
+</div>
 
-<section class="hero">
-  <div>
-    <h2>Modern Tech Store</h2>
-    <p>Shop iPhones, Laptops & Accessories</p>
+<!-- MAIN -->
+<div class="main">
+
+  <div class="topbar">
+    <h1>Apple Products</h1>
+    <button onclick="openCart()">Cart (<span id="cart-count">0</span>)</button>
   </div>
-</section>
 
-<section class="products" id="product-list"></section>
+  <div class="hero">
+    <h2>Discover the latest Apple products</h2>
+    <p>Premium devices. Clean design. Fast performance.</p>
+  </div>
+
+  <div class="products" id="product-list"></div>
+
+</div>
 
 <!-- CART -->
-<div id="cart" class="cart">
+<div class="cart" id="cart">
   <h2>Your Cart</h2>
   <div id="cart-items"></div>
   <h3>Total: $<span id="total">0</span></h3>
-  <button class="checkout" onclick="checkout()">Checkout</button>
-  <button class="close" onclick="closeCart()">Close</button>
+  <button onclick="checkout()">Checkout</button>
+  <button onclick="closeCart()">Close</button>
 </div>
 
 <script src="script.js"></script>
