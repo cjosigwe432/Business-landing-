@@ -1,175 +1,114 @@
 const products = [
 
-/* =========================
-   📱 IPHONE SERIES
-========================= */
-{
-  name: "iPhone 17 Pro Max",
-  price: 1599,
-  img: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg"
-},
-{
-  name: "iPhone 17 Pro",
-  price: 1499,
-  img: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg"
-},
-{
-  name: "iPhone 16 Pro Max",
-  price: 1399,
-  img: "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg"
-},
-{
-  name: "iPhone 16 Pro",
-  price: 1299,
-  img: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg"
-},
-{
-  name: "iPhone 16",
-  price: 1099,
-  img: "https://images.pexels.com/photos/5082566/pexels-photo-5082566.jpeg"
-},
-{
-  name: "iPhone 15 Pro Max",
-  price: 1199,
-  img: "https://images.pexels.com/photos/18105/pexels-photo.jpg"
-},
-{
-  name: "iPhone 15 Pro",
-  price: 1099,
-  img: "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg"
-},
-{
-  name: "iPhone 15",
-  price: 999,
-  img: "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg"
-},
-{
-  name: "iPhone 14 Pro Max",
-  price: 899,
-  img: "https://images.pexels.com/photos/63703/pexels-photo-63703.jpeg"
-},
-{
-  name: "iPhone 14 Pro",
-  price: 799,
-  img: "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg"
-},
-{
-  name: "iPhone 13",
-  price: 599,
-  img: "https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg"
-},
-{
-  name: "iPhone 12",
-  price: 499,
-  img: "https://images.pexels.com/photos/4219654/pexels-photo-4219654.jpeg"
-},
+/* 👕 CLOTHES */
+{ name:"Black Hoodie", price:35, category:"clothes", img:"https://source.unsplash.com/600x600/?hoodie" },
+{ name:"White T-Shirt", price:20, category:"clothes", img:"https://source.unsplash.com/600x600/?tshirt" },
+{ name:"Denim Jacket", price:55, category:"clothes", img:"https://source.unsplash.com/600x600/?jacket" },
+{ name:"Cargo Pants", price:45, category:"clothes", img:"https://source.unsplash.com/600x600/?pants" },
+{ name:"Streetwear Hoodie", price:60, category:"clothes", img:"https://source.unsplash.com/600x600/?streetwear" },
 
-/* =========================
-   💻 MAC
-========================= */
-{
-  name: "MacBook Pro M3",
-  price: 1999,
-  img: "https://images.pexels.com/photos/18105/pexels-photo.jpg"
-},
-{
-  name: "MacBook Air",
-  price: 1299,
-  img: "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg"
-},
+/* 👟 SHOES */
+{ name:"Nike Sneakers", price:90, category:"shoes", img:"https://source.unsplash.com/600x600/?sneakers" },
+{ name:"Running Shoes", price:70, category:"shoes", img:"https://source.unsplash.com/600x600/?running-shoes" },
+{ name:"Sport Shoes", price:80, category:"shoes", img:"https://source.unsplash.com/600x600/?sport-shoes" },
 
-/* =========================
-   📱 IPAD
-========================= */
-{
-  name: "iPad Pro",
-  price: 999,
-  img: "https://images.pexels.com/photos/5082566/pexels-photo-5082566.jpeg"
-},
-{
-  name: "iPad Air",
-  price: 799,
-  img: "https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg"
-},
+/* 🎧 TECH */
+{ name:"Wireless Headphones", price:80, category:"tech", img:"https://source.unsplash.com/600x600/?headphones" },
+{ name:"Smart Watch", price:120, category:"tech", img:"https://source.unsplash.com/600x600/?smartwatch" },
+{ name:"Bluetooth Speaker", price:60, category:"tech", img:"https://source.unsplash.com/600x600/?speaker" },
+{ name:"Gaming Mouse", price:40, category:"tech", img:"https://source.unsplash.com/600x600/?gaming-mouse" },
+{ name:"Mechanical Keyboard", price:90, category:"tech", img:"https://source.unsplash.com/600x600/?keyboard" },
 
-/* =========================
-   🎧 ACCESSORIES
-========================= */
-{
-  name: "AirPods Pro",
-  price: 249,
-  img: "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg"
-},
-{
-  name: "Apple Watch Series",
-  price: 399,
-  img: "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg"
-},
-{
-  name: "MagSafe Charger",
-  price: 59,
-  img: "https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg"
-},
-{
-  name: "iPhone Case Premium",
-  price: 29,
-  img: "https://images.pexels.com/photos/4526413/pexels-photo-4526413.jpeg"
-}
+/* 💻 GADGETS */
+{ name:"Laptop Pro", price:900, category:"tech", img:"https://source.unsplash.com/600x600/?laptop" },
+{ name:"Tablet Pro", price:400, category:"tech", img:"https://source.unsplash.com/600x600/?tablet" },
+
+/* 🧢 ACCESSORIES */
+{ name:"Cap Hat", price:15, category:"clothes", img:"https://source.unsplash.com/600x600/?cap" },
+{ name:"Sunglasses", price:25, category:"clothes", img:"https://source.unsplash.com/600x600/?sunglasses" },
+{ name:"Watch Luxury", price:150, category:"tech", img:"https://source.unsplash.com/600x600/?luxury-watch" }
 
 ];
 
 let cart = [];
+let currentFilter = "all";
 
-const productList = document.getElementById("product-list");
+const list = document.getElementById("product-list");
+const search = document.getElementById("search");
 
-/* RENDER PRODUCTS */
-products.forEach((p, index) => {
-  productList.innerHTML += `
-    <div class="product">
-      <img src="${p.img}" alt="${p.name}">
-      <div class="product-content">
-        <h3>${p.name}</h3>
-        <p>$${p.price}</p>
-        <button onclick="addToCart(${index})">Add to Cart</button>
+/* RENDER */
+function render(data){
+  list.innerHTML = "";
+  data.forEach((p,i)=>{
+    list.innerHTML += `
+      <div class="card">
+        <img src="${p.img}">
+        <div class="card-content">
+          <h3>${p.name}</h3>
+          <p>$${p.price}</p>
+          <button onclick="addToCart(${i})">Add</button>
+        </div>
       </div>
-    </div>
-  `;
-});
+    `;
+  });
+}
 
-/* ADD TO CART */
-function addToCart(index) {
-  cart.push(products[index]);
+render(products);
+
+/* FILTER */
+function filter(cat){
+  currentFilter = cat;
+  apply();
+}
+
+/* SEARCH */
+search.addEventListener("input", apply);
+
+function apply(){
+  let value = search.value.toLowerCase();
+
+  let filtered = products.filter(p=>{
+    let matchCat = currentFilter==="all" || p.category===currentFilter;
+    let matchSearch = p.name.toLowerCase().includes(value);
+    return matchCat && matchSearch;
+  });
+
+  render(filtered);
+}
+
+/* CART */
+function addToCart(i){
+  cart.push(products[i]);
   document.getElementById("cart-count").innerText = cart.length;
   renderCart();
 }
 
-/* CART */
-function renderCart() {
-  let items = document.getElementById("cart-items");
+function renderCart(){
+  let box = document.getElementById("cart-items");
   let total = 0;
-  items.innerHTML = "";
+  box.innerHTML = "";
 
-  cart.forEach(item => {
-    total += item.price;
-    items.innerHTML += `<p>${item.name} - $${item.price}</p>`;
+  cart.forEach(c=>{
+    total += c.price;
+    box.innerHTML += `<p>${c.name} - $${c.price}</p>`;
   });
 
   document.getElementById("total").innerText = total;
 }
 
 /* CART UI */
-function openCart() {
+function openCart(){
   document.getElementById("cart").classList.add("active");
 }
 
-function closeCart() {
+function closeCart(){
   document.getElementById("cart").classList.remove("active");
 }
 
 /* CHECKOUT */
-function checkout() {
+function checkout(){
   let msg = "Order:\n";
-  cart.forEach(i => {
+  cart.forEach(i=>{
     msg += `${i.name} - $${i.price}\n`;
   });
 
